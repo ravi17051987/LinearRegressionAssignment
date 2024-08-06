@@ -45,16 +45,18 @@ Statsmodels     ::  0.14.0<br>
 ## Step 2: Visualising the Data
 	- Temp and aTemp are clearly linearly related. Hence one of these could be potentially insignificant for model building
 	- Target y i.e. cnt is observed to have monotinic relation with temp. A good indication for a linear regression
-	- Target y i.e. cnt doesnt seem to have clear relation with Humidity and windspeed. Need to check if combination of these with other parameters have any significance in model 	  
-          building
+	- Target y i.e. cnt doesnt seem to have clear relation with Humidity and windspeed. Need to check if combination of these with other parameters have any 
+          significance in model building
 	- Categorical variables observed are Year, Month, Season, Weekday,Workingday,Holiday,Weather situation
 	- Except working day and week day, all other variables show good impact on the target y-variable cnt
 	- Given that cnt is a sum of casual and registered user count, these sub components of cnt were also plotted
 	- Observed an opposite behavior of the casual and registered users w.r.t "working day" and "week day", which is resulting
-  	  in a weak relation of these two parameters to target y. Hence, we cannot ignore these parameters because if it happens to be a situation where casual to registered users usage  
+  	  in a weak relation of these two parameters to target y. Hence, we cannot ignore these parameters because if it happens to be a situation where casual to 
+           registered users usage  
           ratio is significantly away from 0.5, then the working day and week day will show a clear impact on cnt. 
-	- Hence it is ideal to build 2 linear regression models, one to capture the casual user behavior & the other to capture the registered user behavior. Finally, overall demand is a 
-          sum of these 2 behaviors. However, first attempt is to build a linear regression for target y which is cnt
+	- Hence it is ideal to build 2 linear regression models, one to capture the casual user behavior & the other to capture the registered user behavior. 
+          Finally, overall demand is a sum of these 2 behaviors. 
+	  However, first attempt is to build a linear regression for target y which is cnt
 
 ## Step 3: Data Preparation
 	- Number of columns in original input data ::  16
@@ -68,7 +70,8 @@ Statsmodels     ::  0.14.0<br>
  	  - Seasons are correlated to months. Example summer has good correlation with "April" and "May" months. Winter to "Oct & Nov"
   	 - Workingday is strongly INVERSELY correlated to Sunday as a white patch can be observed in above heat map. 
  	  - Mist and cloudy is correlated to humidity 
-  	 - All these dependecies can be taken care using "Variance Inflation Factor (VIF)" and "Recursive Feature Elimination RFE" to finalize on variable selection for model building
+  	 - All these dependecies can be taken care using "Variance Inflation Factor (VIF)" and "Recursive Feature Elimination RFE" to finalize on variable 
+           selection for model building
 	
 ## Step 5: Building a linear regression model using "Statsmodels" package
 	- R2 is 41% which means "Temp" parameter alone could explain 41% variance in the target y cnt
@@ -78,18 +81,19 @@ Statsmodels     ::  0.14.0<br>
 	- Observing the p-values, it looks like some of the variables aren't really significant (in the presence of other variables).
         - VIF was used to understand the multicollinearity
 
-### 6 Recursive Feature Elimination RFE and re-building of model using statsmodel
+## Step 6: Recursive Feature Elimination RFE and re-building of model using statsmodel
 	- RFE shortlisted 10 parameters as significant parameters for model development
 	- humidity and temperature are observed to have VIF > 5 i.e there is scope to eliminate these parameters from model
 	- RFE shortlisted parameters resulted in 83% R2 model. It saved a lot of time in shortlisting the parameters
 	- Since the VIF of these shortlisted parameters is in the range 0 to 10, an attempt to reduce the number of independent variables was done
-	- Just by removing humidity, the model R2 has gone down from 83% to 80%. However, the p value of all the remaining parameters is now very close to 0 which indicates that these are  
-          significant parameters
+	- Just by removing humidity, the model R2 has gone down from 83% to 80%. However, the p value of all the remaining parameters is now very close to 0 which 
+          indicates that these are significant parameters
 	- Also the VIF of final set of parameters ranges between 1 to 5, which means that these are fairly independent / weakly dependent parameter
 	- Finally the Prob (F-statistic) is 2.24e-171 which is very close to 0. This indicates that the model is significant
 
 ## Step 7: Residual Analysis of the train data
-	- Clearly the error data set for the train data is observed to follow normal distribution. Also, there is no trend of error data w.r.t fitted values. Hence the linear regression 	  assumption is verified
+	- Clearly the error data set for the train data is observed to follow normal distribution. Also, there is no trend of error data w.r.t fitted values. 
+          Hence the linear regression assumption is verified
 
 ## Step 8: Making Predictions Using the Final Model
 	- Scaling is performed without fit. This is why we see that some of the columns have range outside of [0 1]. 
