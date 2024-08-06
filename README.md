@@ -27,13 +27,13 @@
 
 Python version ::  3.11.7 | packaged by Anaconda, Inc.
 
-Libraries used in the environment are :: 
-Numpy           ::  1.26.4,<br>
-Pandas          ::  2.1.4
-Matplotlib      ::  3.8.0
-Seaborn         ::  0.11.0
-Sklearn         ::  1.2.2
-Statsmodels     ::  0.14.0
+Libraries used in the environment are ::<br>
+Numpy           ::  1.26.4<br>
+Pandas          ::  2.1.4<br>
+Matplotlib      ::  3.8.0<br>
+Seaborn         ::  0.11.0<br>
+Sklearn         ::  1.2.2<br>
+Statsmodels     ::  0.14.0<br>
 
 ## Conclusions ::
 
