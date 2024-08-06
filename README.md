@@ -23,7 +23,17 @@
 - BoomBikes aspires to understand the demand for shared bikes among the people after the ongoing quarantine situation ends across the nation due to Covid-19.
 - The dataset being used is provided by a consulting company contracted by BoomBikes to understand the factors on which the demand for these shared bikes depends
 
-<!-- You don't have to answer all the questions - just the ones relevant to your project. -->
+## Technologies Used
+
+Python version ::  3.11.7 | packaged by Anaconda, Inc.
+
+Libraries used in the environment are :: 
+Numpy           ::  1.26.4
+Pandas          ::  2.1.4
+Matplotlib      ::  3.8.0
+Seaborn         ::  0.11.0
+Sklearn         ::  1.2.2
+Statsmodels     ::  0.14.0
 
 ## Conclusions ::
 
@@ -88,21 +98,6 @@
 ## Step 9: Model Evaluation
 	- R2 on the test data is 77% which is very close to R2 on train data which is 80.5%
 	- Hence the fit is generalizing well across the population
-
-
-
-## Technologies Used
-
-Python version ::  3.11.7 | packaged by Anaconda, Inc.
-
-Libraries used in the environment are :: 
-Numpy           ::  1.26.4
-Pandas          ::  2.1.4
-Matplotlib      ::  3.8.0
-Seaborn         ::  0.11.0
-Sklearn         ::  1.2.2
-Statsmodels     ::  0.14.0
-
 
 
 ## Acknowledgements
