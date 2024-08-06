@@ -45,8 +45,7 @@ Statsmodels     ::  0.14.0<br>
 ## Step 2: Visualising the Data
 	- Temp and aTemp are clearly linearly related. Hence one of these could be potentially insignificant for model building
 	- Target y i.e. cnt is observed to have monotinic relation with temp. A good indication for a linear regression
-	- Target y i.e. cnt doesnt seem to have clear relation with Humidity and windspeed. Need to check if combination of these with other parameters have any 
-          significance in model building
+	- Target y i.e. cnt doesnt seem to have clear relation with Humidity and windspeed. Need to check if combination of these with other parameters have any significance in model building
 	- Categorical variables observed are Year, Month, Season, Weekday,Workingday,Holiday,Weather situation
 	- Except working day and week day, all other variables show good impact on the target y-variable cnt
 	- Given that cnt is a sum of casual and registered user count, these sub components of cnt were also plotted
